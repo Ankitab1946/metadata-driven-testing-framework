@@ -1,0 +1,3 @@
+{
+  "tests/test_feed_validations.py::TestFeedFileValidations::test_feed_file_availability": true
+}
