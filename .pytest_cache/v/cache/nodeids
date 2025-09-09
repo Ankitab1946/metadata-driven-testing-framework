@@ -1,0 +1,4 @@
+[
+  "tests/test_feed_validations.py::TestAutosysValidations::test_autosys_job_availability",
+  "tests/test_feed_validations.py::TestFeedFileValidations::test_feed_file_availability"
+]
