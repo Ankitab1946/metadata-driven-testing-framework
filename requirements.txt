@@ -1,0 +1,15 @@
+pytest==7.4.3
+great-expectations==0.18.8
+pandas==2.1.4
+openpyxl==3.1.2
+sqlalchemy==2.0.23
+pyodbc==5.0.1
+pytest-html==4.1.1
+pytest-metadata==3.0.0
+loguru==0.7.2
+jinja2==3.1.2
+xlsxwriter==3.1.9
+selenium==4.15.2
+webdriver-manager==4.0.1
+python-dotenv==1.0.0
+pydantic==2.5.2
