@@ -292,3 +292,176 @@ For more information, see README.md
 2025-09-09 11:36:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
 2025-09-09 11:36:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
 2025-09-09 11:36:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:41:50 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:41:50 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:42:03 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: uploads/5ae115d4-81ea-45e1-8f5c-6a5b186e439b_Metadata.xlsx
+2025-09-09 11:42:03 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 16 feed metadata records
+2025-09-09 11:42:03 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 16 staging metadata records
+2025-09-09 11:42:03 | WARNING  | utils.excel_reader:_load_enumeration_metadata:200 - Enumeration sheet not found
+2025-09-09 11:42:03 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 11:42:03 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 11:42:03 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 11:42:03 | INFO     | __main__:upload_metadata:82 - Metadata uploaded successfully: 5ae115d4-81ea-45e1-8f5c-6a5b186e439b_Metadata.xlsx
+2025-09-09 11:42:26 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: uploads/5ae115d4-81ea-45e1-8f5c-6a5b186e439b_Metadata.xlsx
+2025-09-09 11:42:26 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 16 feed metadata records
+2025-09-09 11:42:26 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 16 staging metadata records
+2025-09-09 11:42:26 | WARNING  | utils.excel_reader:_load_enumeration_metadata:200 - Enumeration sheet not found
+2025-09-09 11:42:26 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 11:42:26 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 11:42:26 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 11:42:26 | INFO     | __main__:run_validation:130 - Running file validations...
+2025-09-09 11:42:26 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: Property_Inputs.YYYYMMDD
+2025-09-09 11:42:26 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/Property_Inputs.YYYYMMDD
+2025-09-09 11:42:26 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: Insurance_Inetermediate.YYYYMMDD
+2025-09-09 11:42:26 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/Insurance_Inetermediate.YYYYMMDD
+2025-09-09 11:42:26 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: Property_Inetermediate.YYYYMMDD
+2025-09-09 11:42:26 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/Property_Inetermediate.YYYYMMDD
+2025-09-09 11:42:26 | INFO     | __main__:run_validation:140 - Running Autosys validations...
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD availability check completed
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD status check completed
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD availability check completed
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD status check completed
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD availability check completed
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:42:26 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD status check completed
+2025-09-09 11:42:26 | INFO     | __main__:run_validation:160 - Running database validations...
+2025-09-09 11:42:26 | INFO     | validations.report_generator:generate_comprehensive_report:581 - Generating comprehensive report: web_validation_report_5ae115d4-81ea-45e1-8f5c-6a5b186e439b
+2025-09-09 11:42:26 | INFO     | validations.report_generator:generate_html_report:37 - Generating HTML report: web_validation_report_5ae115d4-81ea-45e1-8f5c-6a5b186e439b
+2025-09-09 11:42:26 | INFO     | validations.report_generator:generate_html_report:53 - HTML report generated: reports/web_validation_report_5ae115d4-81ea-45e1-8f5c-6a5b186e439b_20250909_114226.html
+2025-09-09 11:42:26 | INFO     | validations.report_generator:generate_excel_report:74 - Generating Excel report: web_validation_report_5ae115d4-81ea-45e1-8f5c-6a5b186e439b
+2025-09-09 11:42:26 | INFO     | validations.report_generator:generate_excel_report:121 - Excel report generated: reports/web_validation_report_5ae115d4-81ea-45e1-8f5c-6a5b186e439b_20250909_114226.xlsx
+2025-09-09 11:42:26 | INFO     | validations.report_generator:generate_json_report:142 - Generating JSON report: web_validation_report_5ae115d4-81ea-45e1-8f5c-6a5b186e439b
+2025-09-09 11:42:26 | INFO     | validations.report_generator:generate_json_report:156 - JSON report generated: reports/web_validation_report_5ae115d4-81ea-45e1-8f5c-6a5b186e439b_20250909_114226.json
+2025-09-09 11:42:26 | INFO     | validations.report_generator:generate_comprehensive_report:597 - Comprehensive report generated successfully
+2025-09-09 11:42:26 | INFO     | __main__:run_validation:225 - Validation completed for session 5ae115d4-81ea-45e1-8f5c-6a5b186e439b
+2025-09-09 11:46:44 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: uploads/78c40082-ebf2-42ef-80e7-06ab904770f7_Metadata.xlsx
+2025-09-09 11:46:44 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 16 feed metadata records
+2025-09-09 11:46:44 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 16 staging metadata records
+2025-09-09 11:46:44 | WARNING  | utils.excel_reader:_load_enumeration_metadata:200 - Enumeration sheet not found
+2025-09-09 11:46:44 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 11:46:44 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 11:46:44 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 11:46:44 | INFO     | __main__:upload_metadata:82 - Metadata uploaded successfully: 78c40082-ebf2-42ef-80e7-06ab904770f7_Metadata.xlsx
+2025-09-09 11:46:55 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: uploads/78c40082-ebf2-42ef-80e7-06ab904770f7_Metadata.xlsx
+2025-09-09 11:46:55 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 16 feed metadata records
+2025-09-09 11:46:55 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 16 staging metadata records
+2025-09-09 11:46:55 | WARNING  | utils.excel_reader:_load_enumeration_metadata:200 - Enumeration sheet not found
+2025-09-09 11:46:55 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 11:46:55 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 11:46:55 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 11:46:55 | INFO     | __main__:run_validation:130 - Running file validations...
+2025-09-09 11:46:55 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: Property_Inputs.YYYYMMDD
+2025-09-09 11:46:55 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/Property_Inputs.YYYYMMDD
+2025-09-09 11:46:55 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: Insurance_Inetermediate.YYYYMMDD
+2025-09-09 11:46:55 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/Insurance_Inetermediate.YYYYMMDD
+2025-09-09 11:46:55 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: Property_Inetermediate.YYYYMMDD
+2025-09-09 11:46:55 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/Property_Inetermediate.YYYYMMDD
+2025-09-09 11:46:55 | INFO     | __main__:run_validation:140 - Running Autosys validations...
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD availability check completed
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD status check completed
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD availability check completed
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD status check completed
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD availability check completed
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:46:55 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD status check completed
+2025-09-09 11:46:55 | INFO     | __main__:run_validation:160 - Running database validations...
+2025-09-09 11:46:55 | INFO     | validations.report_generator:generate_comprehensive_report:581 - Generating comprehensive report: web_validation_report_78c40082-ebf2-42ef-80e7-06ab904770f7
+2025-09-09 11:46:55 | INFO     | validations.report_generator:generate_html_report:37 - Generating HTML report: web_validation_report_78c40082-ebf2-42ef-80e7-06ab904770f7
+2025-09-09 11:46:55 | INFO     | validations.report_generator:generate_html_report:53 - HTML report generated: reports/web_validation_report_78c40082-ebf2-42ef-80e7-06ab904770f7_20250909_114655.html
+2025-09-09 11:46:55 | INFO     | validations.report_generator:generate_excel_report:74 - Generating Excel report: web_validation_report_78c40082-ebf2-42ef-80e7-06ab904770f7
+2025-09-09 11:46:55 | INFO     | validations.report_generator:generate_excel_report:121 - Excel report generated: reports/web_validation_report_78c40082-ebf2-42ef-80e7-06ab904770f7_20250909_114655.xlsx
+2025-09-09 11:46:55 | INFO     | validations.report_generator:generate_json_report:142 - Generating JSON report: web_validation_report_78c40082-ebf2-42ef-80e7-06ab904770f7
+2025-09-09 11:46:55 | INFO     | validations.report_generator:generate_json_report:156 - JSON report generated: reports/web_validation_report_78c40082-ebf2-42ef-80e7-06ab904770f7_20250909_114655.json
+2025-09-09 11:46:55 | INFO     | validations.report_generator:generate_comprehensive_report:597 - Comprehensive report generated successfully
+2025-09-09 11:46:55 | INFO     | __main__:run_validation:225 - Validation completed for session 78c40082-ebf2-42ef-80e7-06ab904770f7
+2025-09-09 11:55:43 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: uploads/aaa8b580-d123-45ae-b403-e265ce96b416_Metadata.xlsx
+2025-09-09 11:55:43 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 16 feed metadata records
+2025-09-09 11:55:43 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 16 staging metadata records
+2025-09-09 11:55:43 | WARNING  | utils.excel_reader:_load_enumeration_metadata:200 - Enumeration sheet not found
+2025-09-09 11:55:43 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 11:55:43 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 11:55:43 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 11:55:43 | INFO     | __main__:upload_metadata:82 - Metadata uploaded successfully: aaa8b580-d123-45ae-b403-e265ce96b416_Metadata.xlsx
+2025-09-09 11:56:30 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: uploads/b9e49a41-145a-4281-9cc7-23d28cd887f3_Metadata.xlsx
+2025-09-09 11:56:30 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 16 feed metadata records
+2025-09-09 11:56:30 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 16 staging metadata records
+2025-09-09 11:56:30 | WARNING  | utils.excel_reader:_load_enumeration_metadata:200 - Enumeration sheet not found
+2025-09-09 11:56:30 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 11:56:30 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 11:56:30 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 11:56:30 | INFO     | __main__:upload_metadata:82 - Metadata uploaded successfully: b9e49a41-145a-4281-9cc7-23d28cd887f3_Metadata.xlsx
+2025-09-09 11:56:49 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: uploads/1226498f-a9d8-428c-bb93-7fbab68f7e50_Metadata.xlsx
+2025-09-09 11:56:49 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 16 feed metadata records
+2025-09-09 11:56:49 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 16 staging metadata records
+2025-09-09 11:56:49 | WARNING  | utils.excel_reader:_load_enumeration_metadata:200 - Enumeration sheet not found
+2025-09-09 11:56:49 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 11:56:49 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 11:56:49 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 11:56:49 | INFO     | __main__:upload_metadata:82 - Metadata uploaded successfully: 1226498f-a9d8-428c-bb93-7fbab68f7e50_Metadata.xlsx
+2025-09-09 11:59:23 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: uploads/1226498f-a9d8-428c-bb93-7fbab68f7e50_Metadata.xlsx
+2025-09-09 11:59:23 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 16 feed metadata records
+2025-09-09 11:59:23 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 16 staging metadata records
+2025-09-09 11:59:23 | WARNING  | utils.excel_reader:_load_enumeration_metadata:200 - Enumeration sheet not found
+2025-09-09 11:59:23 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 11:59:23 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 11:59:23 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 11:59:23 | INFO     | __main__:run_validation:130 - Running file validations...
+2025-09-09 11:59:23 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: Property_Inputs.YYYYMMDD
+2025-09-09 11:59:23 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/Property_Inputs.YYYYMMDD
+2025-09-09 11:59:23 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: Insurance_Inetermediate.YYYYMMDD
+2025-09-09 11:59:23 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/Insurance_Inetermediate.YYYYMMDD
+2025-09-09 11:59:23 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: Property_Inetermediate.YYYYMMDD
+2025-09-09 11:59:23 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/Property_Inetermediate.YYYYMMDD
+2025-09-09 11:59:23 | INFO     | __main__:run_validation:140 - Running Autosys validations...
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD availability check completed
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD status check completed
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD availability check completed
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD status check completed
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD availability check completed
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD
+2025-09-09 11:59:23 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD status check completed
+2025-09-09 11:59:23 | INFO     | __main__:run_validation:160 - Running database validations...
+2025-09-09 11:59:23 | INFO     | validations.report_generator:generate_comprehensive_report:581 - Generating comprehensive report: web_validation_report_1226498f-a9d8-428c-bb93-7fbab68f7e50
+2025-09-09 11:59:23 | INFO     | validations.report_generator:generate_html_report:37 - Generating HTML report: web_validation_report_1226498f-a9d8-428c-bb93-7fbab68f7e50
+2025-09-09 11:59:23 | INFO     | validations.report_generator:generate_html_report:53 - HTML report generated: reports/web_validation_report_1226498f-a9d8-428c-bb93-7fbab68f7e50_20250909_115923.html
+2025-09-09 11:59:23 | INFO     | validations.report_generator:generate_excel_report:74 - Generating Excel report: web_validation_report_1226498f-a9d8-428c-bb93-7fbab68f7e50
+2025-09-09 11:59:23 | INFO     | validations.report_generator:generate_excel_report:121 - Excel report generated: reports/web_validation_report_1226498f-a9d8-428c-bb93-7fbab68f7e50_20250909_115923.xlsx
+2025-09-09 11:59:23 | INFO     | validations.report_generator:generate_json_report:142 - Generating JSON report: web_validation_report_1226498f-a9d8-428c-bb93-7fbab68f7e50
+2025-09-09 11:59:23 | INFO     | validations.report_generator:generate_json_report:156 - JSON report generated: reports/web_validation_report_1226498f-a9d8-428c-bb93-7fbab68f7e50_20250909_115923.json
+2025-09-09 11:59:23 | INFO     | validations.report_generator:generate_comprehensive_report:597 - Comprehensive report generated successfully
+2025-09-09 11:59:23 | INFO     | __main__:run_validation:225 - Validation completed for session 1226498f-a9d8-428c-bb93-7fbab68f7e50
+2025-09-09 13:28:37 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:28:37 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 13:28:38 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:28:38 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 13:47:00 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:47:00 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:47:00 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:47:00 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 13:47:00 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 13:47:00 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 13:47:11 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:47:11 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 13:48:08 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:48:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 13:48:49 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:48:49 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 13:49:10 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:49:10 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 13:49:11 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 13:49:11 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
