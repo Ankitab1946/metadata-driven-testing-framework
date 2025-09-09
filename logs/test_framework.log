@@ -254,3 +254,41 @@ Next Steps:
 2025-09-09 11:02:01 | INFO     | __main__:run_demo:207 - 4. Check generated reports in the reports/ directory
 2025-09-09 11:02:01 | INFO     | __main__:run_demo:208 - 
 For more information, see README.md
+2025-09-09 11:33:23 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:33:23 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:33:24 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:33:24 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:33:27 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:33:27 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:33:49 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:33:49 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:33:51 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:33:51 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:33:51 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:33:51 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:34:10 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:34:10 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:34:11 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:34:11 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:34:11 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:34:11 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:34:11 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:34:11 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:34:28 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:34:28 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:35:08 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:35:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:35:10 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:35:10 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:35:10 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:35:10 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:35:10 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:35:10 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:35:14 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:35:14 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:36:08 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:36:08 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:36:08 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:36:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:36:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-09 11:36:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
