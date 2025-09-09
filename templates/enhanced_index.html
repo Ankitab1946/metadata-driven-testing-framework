@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadata-Driven Testing Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card-header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-body {
+            padding: 40px;
+        }
+
+        .upload-section {
+            margin-bottom: 40px;
+        }
+
+        .upload-area {
+            border: 3px dashed #e0e0e0;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-area:hover {
+            border-color: #4facfe;
+            background: #f8f9ff;
+        }
+
+        .upload-area.dragover {
+            border-color: #4facfe;
+            background: #f0f8ff;
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            color: #4facfe;
+            margin-bottom: 20px;
+        }
+
+        .upload-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
+        }
+
+        .metadata-info {
+            display: none;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4facfe;
+            margin-bottom: 5px;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .validation-options {
+            display: none;
+            margin: 30px 0;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .option-group {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .option-group h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #4facfe;
+        }
+
+        .checkbox-item label {
+            font-size: 0.95rem;
+            color: #555;
+            cursor: pointer;
+        }
+
+        /* Database Configuration Styles */
+        .db-config-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .db-server {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .db-server h4 {
+            margin: 0 0 15px 0;
+            color: #4facfe;
+            font-weight: 600;
+        }
+
+        .db-server input[type="text"],
+        .db-server input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .db-server input[type="text"]:focus,
+        .db-server input[type="password"]:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        /* Screenshot Configuration Styles */
+        .screenshot-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f8ff;
+            border-radius: 10px;
+            border: 1px solid #4facfe;
+        }
+
+        .screenshot-options {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .screenshot-preview {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .screenshot-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .results-section {
+            display: none;
+            margin-top: 40px;
+        }
+
+        .results-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .summary-card.total { border-left: 5px solid #6c757d; }
+        .summary-card.passed { border-left: 5px solid #28a745; }
+        .summary-card.failed { border-left: 5px solid #dc3545; }
+        .summary-card.error { border-left: 5px solid #ffc107; }
+
+        .results-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .status-pass {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .status-error {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .download-section {
+            display: none;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4facfe;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Metadata-Driven Testing Framework</h1>
+            <p>Upload your metadata file and run comprehensive data validations</p>
+        </div>
+
+        <div class="main-card">
+            <div class="card-header">
+                <h2>Data Validation Dashboard</h2>
+                <p>Automated testing based on your Excel metadata configuration</p>
+            </div>
+
+            <div class="card-body">
+                <!-- Upload Section -->
+                <div class="upload-section">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📁</div>
+                        <div class="upload-text">
+                            <strong>Click to upload</strong> or drag and drop your Metadata.xlsx file here
+                        </div>
+                        <input type="file" id="fileInput" class="file-input" accept=".xlsx,.xls">
+                        <button type="button" class="btn" onclick="document.getElementById('fileInput').click()">
+                            Choose File
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Metadata Information -->
+                <div class="metadata-info" id="metadataInfo">
+                    <h3>Metadata Summary</h3>
+                    <div class="info-grid" id="infoGrid">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+
+                <!-- Validation Options -->
+                <div class="validation-options" id="validationOptions">
+                    <h3>Validation Configuration</h3>
+                    <div class="options-grid">
+                        <div class="option-group">
+                            <h3>Select Feeds</h3>
+                            <div class="checkbox-group" id="feedsGroup">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <h3>Database Configuration</h3>
+                            <div class="db-config-section">
+                                <div class="db-server">
+                                    <h4>Server 1 Connection</h4>
+                                    <input type="text" id="server1_host" placeholder="Server Host" value="localhost">
+                                    <input type="text" id="server1_database" placeholder="Database Name" value="TestDB1">
+                                    <input type="text" id="server1_username" placeholder="Username" value="">
+                                    <input type="password" id="server1_password" placeholder="Password" value="">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="server1_enabled" value="server1" checked>
+                                        <label for="server1_enabled">Enable Server 1</label>
+                                    </div>
+                                </div>
+                                <div class="db-server">
+                                    <h4>Server 2 Connection</h4>
+                                    <input type="text" id="server2_host" placeholder="Server Host" value="localhost">
+                                    <input type="text" id="server2_database" placeholder="Database Name" value="TestDB2">
+                                    <input type="text" id="server2_username" placeholder="Username" value="">
+                                    <input type="password" id="server2_password" placeholder="Password" value="">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="server2_enabled" value="server2" checked>
+                                        <label for="server2_enabled">Enable Server 2</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <h3>Validation Types</h3>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="file_validation" value="file_validation" checked>
+                                    <label for="file_validation">File Validations</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="autosys_validation" value="autosys_validation" checked>
+                                    <label for="autosys_validation">Autosys Job Validations</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="db_validation" value="db_validation" checked>
+                                    <label for="db_validation">Database Validations</label>
+                                </div>
+                            </div>
+
+                            <!-- Screenshot Configuration -->
+                            <div class="screenshot-section">
+                                <h4>📸 Screenshot Options</h4>
+                                <div class="screenshot-options">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="capture_screenshots" value="capture_screenshots" checked>
+                                        <label for="capture_screenshots">Capture Screenshots</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="screenshot_on_failure" value="screenshot_on_failure" checked>
+                                        <label for="screenshot_on_failure">Screenshot on Failure Only</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="button" class="btn btn-success" id="runValidationBtn" onclick="runValidation()">
+                            🚀 Run Validation Tests
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loading -->
+                <div class="loading" id="loadingSection">
+                    <div class="spinner"></div>
+                    <p>Running validation tests... Please wait.</p>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section" id="resultsSection">
+                    <h3>Validation Results</h3>
+                    
+                    <div class="results-summary" id="resultsSummary">
+                        <!-- Dynamic content -->
+                    </div>
+
+                    <div class="results-table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Test Type</th>
+                                    <th>Feed/Job</th>
+                                    <th>Column</th>
+                                    <th>Status</th>
+                                    <th>Error Message</th>
+                                    <th>Screenshot</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsTableBody">
+                                <!-- Dynamic content -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Screenshot Preview -->
+                    <div class="screenshot-preview" id="screenshotPreview">
+                        <h4>Screenshot Preview</h4>
+                        <img id="screenshotImage" src="" alt="Screenshot">
+                    </div>
+                </div>
+
+                <!-- Download Section -->
+                <div class="download-section" id="downloadSection">
+                    <h3>Download Reports</h3>
+                    <div class="download-buttons" id="downloadButtons">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+
+                <!-- Alerts -->
+                <div id="alertContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSessionId = null;
+        let validationResults = [];
+
+        // File upload handling
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFileUpload(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFileUpload(e.target.files[0]);
+            }
+        });
+
+        function handleFileUpload(file) {
+            if (!file.name.match(/\.(xlsx|xls)$/)) {
+                showAlert('Please select a valid Excel file (.xlsx or .xls)', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('metadata_file', file);
+
+            showAlert('Uploading and validating metadata file...', 'info');
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    currentSessionId = data.session_id;
+                    displayMetadataInfo(data.summary);
+                    showAlert(`Metadata file uploaded successfully: ${data.filename}`, 'success');
+                } else {
+                    showAlert(data.error, 'error');
+                }
+            })
+            .catch(error => {
+                showAlert('Upload failed: ' + error.message, 'error');
+            });
+        }
+
+        function displayMetadataInfo(summary) {
+            const infoGrid = document.getElementById('infoGrid');
+            infoGrid.innerHTML = `
+                <div class="info-card">
+                    <div class="info-number">${summary.feed_count}</div>
+                    <div class="info-label">Feed Records</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-number">${summary.staging_count}</div>
+                    <div class="info-label">Staging Records</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-number">${summary.enumeration_count}</div>
+                    <div class="info-label">Enumerations</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-number">${summary.unique_feeds.length}</div>
+                    <div class="info-label">Unique Feeds</div>
+                </div>
+            `;
+
+            // Populate feeds checkboxes
+            const feedsGroup = document.getElementById('feedsGroup');
+            feedsGroup.innerHTML = summary.unique_feeds.map(feed => `
+                <div class="checkbox-item">
+                    <input type="checkbox" id="feed_${feed}" value="${feed}" checked>
+                    <label for="feed_${feed}">${feed}</label>
+                </div>
+            `).join('');
+
+            document.getElementById('metadataInfo').style.display = 'block';
+            document.getElementById('validationOptions').style.display = 'block';
+        }
+
+        function runValidation() {
+            if (!currentSessionId) {
+                showAlert('Please upload a metadata file first', 'error');
+                return;
+            }
+
+            // Get selected options
+            const selectedFeeds = Array.from(document.querySelectorAll('#feedsGroup input:checked')).map(cb => cb.value);
+            
+            // Get database configurations
+            const databaseConfigs = [];
+            if (document.getElementById('server1_enabled').checked) {
+                databaseConfigs.push({
+                    name: 'server1',
+                    host: document.getElementById('server1_host').value,
+                    database: document.getElementById('server1_database').value,
+                    username: document.getElementById('server1_username').value,
+                    password: document.getElementById('server1_password').value
+                });
+            }
+            if (document.getElementById('server2_enabled').checked) {
+                databaseConfigs.push({
+                    name: 'server2',
+                    host: document.getElementById('server2_host').value,
+                    database: document.getElementById('server2_database').value,
+                    username: document.getElementById('server2_username').value,
+                    password: document.getElementById('server2_password').value
+                });
+            }
+
+            const validationTypes = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value).filter(v => ['file_validation', 'autosys_validation', 'db_validation'].includes(v));
+            
+            // Screenshot options
+            const captureScreenshots = document.getElementById('capture_screenshots').checked;
+            const screenshotOnFailure = document.getElementById('screenshot_on_failure').checked;
+
+            // Show loading
+            document.getElementById('loadingSection').style.display = 'block';
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('downloadSection').style.display = 'none';
+
+            const requestData = {
+                session_id: currentSessionId,
+                selected_feeds: selectedFeeds,
+                database_configs: databaseConfigs,
+                validation_types: validationTypes,
+                screenshot_options: {
+                    capture_screenshots: captureScreenshots,
+                    screenshot_on_failure: screenshotOnFailure
+                }
+            };
+
+            fetch('/validate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loadingSection').style.display = 'none';
+                
+                if (data.success) {
+                    validationResults = data.validation_results;
+                    displayResults(data.summary, data.validation_results);
+                    displayDownloadOptions(data.report_paths);
+                    showAlert('Validation completed successfully!', 'success');
+                } else {
+                    showAlert(data.error, 'error');
+                }
+            })
+            .catch(error => {
+                document.getElementById('loadingSection').style.display = 'none';
+                showAlert('Validation failed: ' + error.message, 'error');
+            });
+        }
+
+        function displayResults(summary, results) {
+            // Display summary
+            const summaryContainer = document.getElementById('resultsSummary');
+            summaryContainer.innerHTML = `
+                <div class="summary-card total">
+                    <div class="info-number">${summary.total_tests}</div>
+                    <div class="info-label">Total Tests</div>
+                </div>
+                <div class="summary-card passed">
+                    <div class="info-number">${summary.passed_tests}</div>
+                    <div class="info-label">Passed</div>
+                </div>
+                <div class="summary-card failed">
+                    <div class="info-number">${summary.failed_tests}</div>
+                    <div class="info-label">Failed</div>
+                </div>
+                <div class="summary-card error">
+                    <div class="info-number">${summary.error_tests}</div>
+                    <div class="info-label">Errors</div>
+                </div>
+            `;
+
+            // Display detailed results
+            const tableBody = document.getElementById('resultsTableBody');
+            tableBody.innerHTML = results.map(result => {
+                const statusClass = result.validation_status === 'PASS' ? 'status-pass' : 
+                                  result.validation_status === 'FAIL' ? 'status-fail' : 'status-error';
+                
+                const screenshotCell = result.screenshot_path ? 
+                    `<button class="btn" onclick="showScreenshot('${result.screenshot_path}')">📸 View</button>` : 
+                    'N/A';
+                
+                return `
+                    <tr>
+                        <td>${result.validation_category || 'N/A'}</td>
+                        <td>${result.test_type || result.validation_type || 'N/A'}</td>
+                        <td>${result.feed_name || result.job_name || 'N/A'}</td>
+                        <td>${result.column_name || 'N/A'}</td>
+                        <td><span class="status-badge ${statusClass}">${result.validation_status}</span></td>
+                        <td>${result.error_message || 'N/A'}</td>
+                        <td>${screenshotCell}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            document.getElementById('resultsSection').style.display = 'block';
+        }
+
+        function showScreenshot(screenshotPath) {
+            const screenshotPreview = document.getElementById('screenshotPreview');
+            const screenshotImage = document.getElementById('screenshotImage');
+            
+            screenshotImage.src = `/screenshots/${screenshotPath}`;
+            screenshotPreview.style.display = 'block';
+            
+            // Scroll to screenshot
+            screenshotPreview.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function displayDownloadOptions(reportPaths) {
+            const downloadButtons = document.getElementById('downloadButtons');
+            downloadButtons.innerHTML = Object.entries(reportPaths).map(([type, filename]) => `
+                <a href="/download/${type}/${filename}" class="btn" download>
+                    📄 Download ${type.toUpperCase()} Report
+                </a>
+            `).join('');
+
+            document.getElementById('downloadSection').style.display = 'block';
+        }
+
+        function showAlert(message, type) {
+            const alertContainer = document.getElementById('alertContainer');
+            const alertClass = type === 'success' ? 'alert-success' : 'alert-error';
+            
+            alertContainer.innerHTML = `
+                <div class="alert ${alertClass}">
+                    ${message}
+                </div>
+            `;
+
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                alertContainer.innerHTML = '';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
