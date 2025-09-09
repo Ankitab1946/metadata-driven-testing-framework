@@ -1,0 +1,256 @@
+2025-09-09 10:54:29 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 10:54:29 | INFO     | __main__:run_demo:17 - ============================================================
+2025-09-09 10:54:29 | INFO     | __main__:run_demo:18 - METADATA-DRIVEN TESTING FRAMEWORK DEMO
+2025-09-09 10:54:29 | INFO     | __main__:run_demo:19 - ============================================================
+2025-09-09 10:54:29 | INFO     | __main__:run_demo:22 - 
+1. Loading Metadata from Excel file...
+2025-09-09 10:54:29 | ERROR    | utils.excel_reader:__init__:87 - Metadata file not found: metadata/Metadata.xlsx
+2025-09-09 10:54:29 | ERROR    | __main__:run_demo:37 - ✗ Failed to load metadata: Metadata file not found: metadata/Metadata.xlsx
+2025-09-09 10:56:28 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:17 - ============================================================
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:18 - METADATA-DRIVEN TESTING FRAMEWORK DEMO
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:19 - ============================================================
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:22 - 
+1. Loading Metadata from Excel file...
+2025-09-09 10:56:28 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: metadata/Metadata.xlsx
+2025-09-09 10:56:28 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 6 feed metadata records
+2025-09-09 10:56:28 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 3 staging metadata records
+2025-09-09 10:56:28 | INFO     | utils.excel_reader:_load_enumeration_metadata:217 - Loaded 7 enumeration metadata records
+2025-09-09 10:56:28 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 10:56:28 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 10:56:28 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:27 - ✓ Loaded 6 feed metadata records
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:28 - ✓ Loaded 3 staging metadata records
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:29 - ✓ Loaded 7 enumeration records
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:34 -   Sample Feed: CUSTOMER_FEED -> server1.CUSTOMER_STG
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:41 - 
+2. File Validation Demo...
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:47 -   Testing feed: TRANSACTION_FEED
+2025-09-09 10:56:28 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: TRANSACTION_FEED
+2025-09-09 10:56:28 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/TRANSACTION_FEED
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:52 -     ✗ File availability: FAIL
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:55 -       Note: Feed directory does not exist: /data/feeds/TRANSACTION_FEED
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:47 -   Testing feed: CUSTOMER_FEED
+2025-09-09 10:56:28 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: CUSTOMER_FEED
+2025-09-09 10:56:28 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/CUSTOMER_FEED
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:52 -     ✗ File availability: FAIL
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:55 -       Note: Feed directory does not exist: /data/feeds/CUSTOMER_FEED
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:61 - 
+3. Autosys Job Validation Demo...
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:67 -   Testing job: FEED_LOAD_CUSTOMER_FEED
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_CUSTOMER_FEED
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_CUSTOMER_FEED availability check completed
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:72 -     ✓ Job availability: PASS
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_CUSTOMER_FEED
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_CUSTOMER_FEED status check completed
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:77 -     ✓ Job status: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:67 -   Testing job: FEED_LOAD_TRANSACTION_FEED
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_TRANSACTION_FEED
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_TRANSACTION_FEED availability check completed
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:72 -     ✓ Job availability: PASS
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_TRANSACTION_FEED
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_TRANSACTION_FEED status check completed
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:77 -     ✓ Job status: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:67 -   Testing job: DATA_VALIDATION_JOB
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: DATA_VALIDATION_JOB
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job DATA_VALIDATION_JOB availability check completed
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:72 -     ✓ Job availability: PASS
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: DATA_VALIDATION_JOB
+2025-09-09 10:56:28 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job DATA_VALIDATION_JOB status check completed
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:77 -     ✓ Job status: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:83 - 
+4. Database Validation Demo...
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:85 -   Note: Using mock database validation (no real DB connection)
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:91 -   Testing: CUSTOMER_FEED.CUSTOMER_ID
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:103 -     ✓ Data type validation: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:116 -     ✓ Mandatory field validation: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:129 -     ✓ Unique constraint validation: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:91 -   Testing: CUSTOMER_FEED.CUSTOMER_NAME
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:103 -     ✓ Data type validation: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:116 -     ✓ Mandatory field validation: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:91 -   Testing: CUSTOMER_FEED.STATUS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:103 -     ✓ Data type validation: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:116 -     ✓ Mandatory field validation: PASS
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:136 - 
+5. Report Generation Demo...
+2025-09-09 10:56:28 | INFO     | validations.report_generator:generate_comprehensive_report:581 - Generating comprehensive report: demo_validation_report
+2025-09-09 10:56:28 | INFO     | validations.report_generator:generate_html_report:37 - Generating HTML report: demo_validation_report
+2025-09-09 10:56:28 | INFO     | validations.report_generator:generate_html_report:53 - HTML report generated: reports/demo_validation_report_20250909_105628.html
+2025-09-09 10:56:28 | INFO     | validations.report_generator:generate_excel_report:74 - Generating Excel report: demo_validation_report
+2025-09-09 10:56:28 | INFO     | validations.report_generator:generate_excel_report:121 - Excel report generated: reports/demo_validation_report_20250909_105628.xlsx
+2025-09-09 10:56:28 | INFO     | validations.report_generator:generate_json_report:142 - Generating JSON report: demo_validation_report
+2025-09-09 10:56:28 | INFO     | validations.report_generator:generate_json_report:156 - JSON report generated: reports/demo_validation_report_20250909_105628.json
+2025-09-09 10:56:28 | INFO     | validations.report_generator:generate_comprehensive_report:597 - Comprehensive report generated successfully
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:178 -   ✓ Reports generated successfully:
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:180 -     - HTML: reports/demo_validation_report_20250909_105628.html
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:180 -     - EXCEL: reports/demo_validation_report_20250909_105628.xlsx
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:180 -     - JSON: reports/demo_validation_report_20250909_105628.json
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:186 - 
+6. Configuration Demo...
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:188 -   Current Configuration:
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:189 -     - Metadata file: metadata/Metadata.xlsx
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:190 -     - Feed base path: /data/feeds
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:191 -     - Log base path: /data/logs
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:192 -     - Report output path: reports
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:193 -     - Autosys mock mode: True
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:194 -     - Autosys environment: DEV
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:200 - 
+============================================================
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:201 - DEMO COMPLETED SUCCESSFULLY!
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:202 - ============================================================
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:203 - 
+Next Steps:
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:204 - 1. Update database connection strings in config/config.py
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:205 - 2. Customize metadata file for your specific feeds and tables
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:206 - 3. Run actual tests using: python run_tests.py
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:207 - 4. Check generated reports in the reports/ directory
+2025-09-09 10:56:28 | INFO     | __main__:run_demo:208 - 
+For more information, see README.md
+2025-09-09 10:57:35 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 10:57:35 | INFO     | conftest:setup_test_environment:87 - Setting up test environment
+2025-09-09 10:57:35 | INFO     | conftest:setup_test_environment:97 - Test environment setup completed
+2025-09-09 10:57:35 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: metadata/Metadata.xlsx
+2025-09-09 10:57:35 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 6 feed metadata records
+2025-09-09 10:57:35 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 3 staging metadata records
+2025-09-09 10:57:35 | INFO     | utils.excel_reader:_load_enumeration_metadata:217 - Loaded 7 enumeration metadata records
+2025-09-09 10:57:35 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 10:57:35 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 10:57:35 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 10:57:35 | INFO     | conftest:metadata_reader:23 - Metadata loaded successfully for test session
+2025-09-09 10:57:35 | INFO     | conftest:selected_feeds:56 - No specific feeds selected, will validate all feeds
+2025-09-09 10:57:35 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: TRANSACTION_FEED
+2025-09-09 10:57:35 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/TRANSACTION_FEED
+2025-09-09 10:57:36 | INFO     | conftest:setup_test_environment:101 - Cleaning up test environment
+2025-09-09 10:57:36 | INFO     | conftest:generate_final_report:111 - Generating final comprehensive report
+2025-09-09 10:57:36 | INFO     | validations.report_generator:generate_comprehensive_report:581 - Generating comprehensive report: final_validation_report
+2025-09-09 10:57:36 | INFO     | validations.report_generator:generate_html_report:37 - Generating HTML report: final_validation_report
+2025-09-09 10:57:36 | INFO     | validations.report_generator:generate_html_report:53 - HTML report generated: reports/final_validation_report_20250909_105736.html
+2025-09-09 10:57:36 | INFO     | validations.report_generator:generate_excel_report:74 - Generating Excel report: final_validation_report
+2025-09-09 10:57:36 | ERROR    | validations.report_generator:generate_excel_report:126 - Error generating Excel report: Sheetname 'Unknown', with case ignored, is already in use.
+2025-09-09 10:57:36 | ERROR    | validations.report_generator:generate_comprehensive_report:602 - Error generating comprehensive report: Sheetname 'Unknown', with case ignored, is already in use.
+2025-09-09 10:57:36 | ERROR    | conftest:generate_final_report:122 - Failed to generate final report: Sheetname 'Unknown', with case ignored, is already in use.
+2025-09-09 10:58:46 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 10:58:46 | INFO     | conftest:setup_test_environment:87 - Setting up test environment
+2025-09-09 10:58:46 | INFO     | conftest:setup_test_environment:97 - Test environment setup completed
+2025-09-09 10:58:46 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: metadata/Metadata.xlsx
+2025-09-09 10:58:46 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 6 feed metadata records
+2025-09-09 10:58:46 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 3 staging metadata records
+2025-09-09 10:58:46 | INFO     | utils.excel_reader:_load_enumeration_metadata:217 - Loaded 7 enumeration metadata records
+2025-09-09 10:58:46 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 10:58:46 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 10:58:46 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 10:58:46 | INFO     | conftest:metadata_reader:23 - Metadata loaded successfully for test session
+2025-09-09 10:58:46 | INFO     | conftest:selected_feeds:56 - No specific feeds selected, will validate all feeds
+2025-09-09 10:58:46 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_CUSTOMER_FEED
+2025-09-09 10:58:46 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_CUSTOMER_FEED availability check completed
+2025-09-09 10:58:46 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_TRANSACTION_FEED
+2025-09-09 10:58:46 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_TRANSACTION_FEED availability check completed
+2025-09-09 10:58:46 | INFO     | conftest:setup_test_environment:101 - Cleaning up test environment
+2025-09-09 10:58:46 | INFO     | conftest:generate_final_report:111 - Generating final comprehensive report
+2025-09-09 10:58:46 | INFO     | validations.report_generator:generate_comprehensive_report:581 - Generating comprehensive report: final_validation_report
+2025-09-09 10:58:46 | INFO     | validations.report_generator:generate_html_report:37 - Generating HTML report: final_validation_report
+2025-09-09 10:58:46 | INFO     | validations.report_generator:generate_html_report:53 - HTML report generated: reports/final_validation_report_20250909_105846.html
+2025-09-09 10:58:46 | INFO     | validations.report_generator:generate_excel_report:74 - Generating Excel report: final_validation_report
+2025-09-09 10:58:46 | ERROR    | validations.report_generator:generate_excel_report:126 - Error generating Excel report: Sheetname 'Unknown', with case ignored, is already in use.
+2025-09-09 10:58:46 | ERROR    | validations.report_generator:generate_comprehensive_report:602 - Error generating comprehensive report: Sheetname 'Unknown', with case ignored, is already in use.
+2025-09-09 10:58:46 | ERROR    | conftest:generate_final_report:122 - Failed to generate final report: Sheetname 'Unknown', with case ignored, is already in use.
+2025-09-09 11:02:01 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:17 - ============================================================
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:18 - METADATA-DRIVEN TESTING FRAMEWORK DEMO
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:19 - ============================================================
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:22 - 
+1. Loading Metadata from Excel file...
+2025-09-09 11:02:01 | INFO     | utils.excel_reader:load_all_metadata:93 - Loading metadata from: metadata/Metadata.xlsx
+2025-09-09 11:02:01 | INFO     | utils.excel_reader:_load_feed_metadata:151 - Loaded 6 feed metadata records
+2025-09-09 11:02:01 | INFO     | utils.excel_reader:_load_staging_metadata:191 - Loaded 3 staging metadata records
+2025-09-09 11:02:01 | INFO     | utils.excel_reader:_load_enumeration_metadata:217 - Loaded 7 enumeration metadata records
+2025-09-09 11:02:01 | INFO     | utils.excel_reader:_load_pattern_metadata:232 - Pattern metadata loading - placeholder implementation
+2025-09-09 11:02:01 | INFO     | utils.excel_reader:_load_reconciliation_metadata:247 - Reconciliation metadata loading - placeholder implementation
+2025-09-09 11:02:01 | INFO     | utils.excel_reader:load_all_metadata:105 - Successfully loaded all metadata
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:27 - ✓ Loaded 6 feed metadata records
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:28 - ✓ Loaded 3 staging metadata records
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:29 - ✓ Loaded 7 enumeration records
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:34 -   Sample Feed: CUSTOMER_FEED -> server1.CUSTOMER_STG
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:41 - 
+2. File Validation Demo...
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:47 -   Testing feed: CUSTOMER_FEED
+2025-09-09 11:02:01 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: CUSTOMER_FEED
+2025-09-09 11:02:01 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/CUSTOMER_FEED
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:52 -     ✗ File availability: FAIL
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:55 -       Note: Feed directory does not exist: /data/feeds/CUSTOMER_FEED
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:47 -   Testing feed: TRANSACTION_FEED
+2025-09-09 11:02:01 | INFO     | validations.file_checks:check_feed_file_availability:32 - Checking feed file availability for: TRANSACTION_FEED
+2025-09-09 11:02:01 | ERROR    | validations.file_checks:check_feed_file_availability:52 - Feed directory does not exist: /data/feeds/TRANSACTION_FEED
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:52 -     ✗ File availability: FAIL
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:55 -       Note: Feed directory does not exist: /data/feeds/TRANSACTION_FEED
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:61 - 
+3. Autosys Job Validation Demo...
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:67 -   Testing job: FEED_LOAD_CUSTOMER_FEED
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_CUSTOMER_FEED
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_CUSTOMER_FEED availability check completed
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:72 -     ✓ Job availability: PASS
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_CUSTOMER_FEED
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_CUSTOMER_FEED status check completed
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:77 -     ✓ Job status: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:67 -   Testing job: FEED_LOAD_TRANSACTION_FEED
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: FEED_LOAD_TRANSACTION_FEED
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job FEED_LOAD_TRANSACTION_FEED availability check completed
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:72 -     ✓ Job availability: PASS
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: FEED_LOAD_TRANSACTION_FEED
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job FEED_LOAD_TRANSACTION_FEED status check completed
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:77 -     ✓ Job status: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:67 -   Testing job: DATA_VALIDATION_JOB
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:check_job_availability:31 - Checking Autosys job availability: DATA_VALIDATION_JOB
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:_mock_job_availability:325 - Mock: Autosys job DATA_VALIDATION_JOB availability check completed
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:72 -     ✓ Job availability: PASS
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:check_job_status:72 - Checking Autosys job status: DATA_VALIDATION_JOB
+2025-09-09 11:02:01 | INFO     | validations.autosys_checks:_mock_job_status:350 - Mock: Autosys job DATA_VALIDATION_JOB status check completed
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:77 -     ✓ Job status: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:83 - 
+4. Database Validation Demo...
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:85 -   Note: Using mock database validation (no real DB connection)
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:91 -   Testing: CUSTOMER_FEED.CUSTOMER_ID
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:103 -     ✓ Data type validation: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:116 -     ✓ Mandatory field validation: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:129 -     ✓ Unique constraint validation: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:91 -   Testing: CUSTOMER_FEED.CUSTOMER_NAME
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:103 -     ✓ Data type validation: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:116 -     ✓ Mandatory field validation: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:91 -   Testing: CUSTOMER_FEED.STATUS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:103 -     ✓ Data type validation: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:116 -     ✓ Mandatory field validation: PASS
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:136 - 
+5. Report Generation Demo...
+2025-09-09 11:02:01 | INFO     | validations.report_generator:generate_comprehensive_report:581 - Generating comprehensive report: demo_validation_report
+2025-09-09 11:02:01 | INFO     | validations.report_generator:generate_html_report:37 - Generating HTML report: demo_validation_report
+2025-09-09 11:02:01 | INFO     | validations.report_generator:generate_html_report:53 - HTML report generated: reports/demo_validation_report_20250909_110201.html
+2025-09-09 11:02:01 | INFO     | validations.report_generator:generate_excel_report:74 - Generating Excel report: demo_validation_report
+2025-09-09 11:02:01 | INFO     | validations.report_generator:generate_excel_report:121 - Excel report generated: reports/demo_validation_report_20250909_110201.xlsx
+2025-09-09 11:02:01 | INFO     | validations.report_generator:generate_json_report:142 - Generating JSON report: demo_validation_report
+2025-09-09 11:02:01 | INFO     | validations.report_generator:generate_json_report:156 - JSON report generated: reports/demo_validation_report_20250909_110201.json
+2025-09-09 11:02:01 | INFO     | validations.report_generator:generate_comprehensive_report:597 - Comprehensive report generated successfully
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:178 -   ✓ Reports generated successfully:
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:180 -     - HTML: reports/demo_validation_report_20250909_110201.html
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:180 -     - EXCEL: reports/demo_validation_report_20250909_110201.xlsx
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:180 -     - JSON: reports/demo_validation_report_20250909_110201.json
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:186 - 
+6. Configuration Demo...
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:188 -   Current Configuration:
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:189 -     - Metadata file: metadata/Metadata.xlsx
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:190 -     - Feed base path: /data/feeds
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:191 -     - Log base path: /data/logs
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:192 -     - Report output path: reports
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:193 -     - Autosys mock mode: True
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:194 -     - Autosys environment: DEV
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:200 - 
+============================================================
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:201 - DEMO COMPLETED SUCCESSFULLY!
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:202 - ============================================================
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:203 - 
+Next Steps:
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:204 - 1. Update database connection strings in config/config.py
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:205 - 2. Customize metadata file for your specific feeds and tables
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:206 - 3. Run actual tests using: python run_tests.py
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:207 - 4. Check generated reports in the reports/ directory
+2025-09-09 11:02:01 | INFO     | __main__:run_demo:208 - 
+For more information, see README.md
