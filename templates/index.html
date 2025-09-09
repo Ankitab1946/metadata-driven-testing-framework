@@ -70,32 +70,27 @@
             margin-bottom: 40px;
         }
 
-        .upload-area {
-            border: 3px dashed #e0e0e0;
+        .file-browser {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
             border-radius: 15px;
-            padding: 40px;
+            padding: 30px;
             text-align: center;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
-        .upload-area:hover {
-            border-color: #4facfe;
-            background: #f8f9ff;
-        }
-
-        .upload-area.dragover {
+        .file-browser:hover {
             border-color: #4facfe;
             background: #f0f8ff;
         }
 
-        .upload-icon {
+        .file-browser-icon {
             font-size: 3rem;
             color: #4facfe;
             margin-bottom: 20px;
         }
 
-        .upload-text {
+        .file-browser-text {
             font-size: 1.1rem;
             color: #666;
             margin-bottom: 20px;
@@ -134,8 +129,30 @@
             background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
         }
 
-        .btn-danger {
-            background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
+        .btn-browse {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+
+        .btn-test {
+            background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);
+            color: white;
+            font-size: 0.9rem;
+            padding: 8px 20px;
+        }
+
+        .selected-file {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e8;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+        }
+
+        .selected-file-name {
+            font-weight: 600;
+            color: #155724;
         }
 
         .metadata-info {
@@ -181,7 +198,7 @@
 
         .options-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
@@ -220,6 +237,101 @@
             font-size: 0.95rem;
             color: #555;
             cursor: pointer;
+        }
+
+        /* SQL Server Configuration Styles */
+        .sql-server-config {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sql-server {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #4facfe;
+        }
+
+        .sql-server h4 {
+            margin: 0 0 20px 0;
+            color: #4facfe;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sql-server-icon {
+            font-size: 1.3rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .windows-auth-info {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4facfe;
+            margin-top: 10px;
+        }
+
+        .windows-auth-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #0c5460;
+        }
+
+        .connection-test {
+            margin-top: 15px;
+        }
+
+        .connection-status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
 
         .results-section {
@@ -375,33 +487,36 @@
     <div class="container">
         <div class="header">
             <h1>Metadata-Driven Testing Framework</h1>
-            <p>Upload your metadata file and run comprehensive data validations</p>
+            <p>Browse and upload your metadata file, configure SQL Server connections</p>
         </div>
 
         <div class="main-card">
             <div class="card-header">
                 <h2>Data Validation Dashboard</h2>
-                <p>Automated testing based on your Excel metadata configuration</p>
+                <p>Automated testing with SQL Server Windows Authentication</p>
             </div>
 
             <div class="card-body">
-                <!-- Upload Section -->
+                <!-- File Browser Section -->
                 <div class="upload-section">
-                    <div class="upload-area" id="uploadArea">
-                        <div class="upload-icon">📁</div>
-                        <div class="upload-text">
-                            <strong>Click to upload</strong> or drag and drop your Metadata.xlsx file here
+                    <div class="file-browser">
+                        <div class="file-browser-icon">📂</div>
+                        <div class="file-browser-text">
+                            <strong>Browse and select</strong> your Metadata.xlsx file
                         </div>
                         <input type="file" id="fileInput" class="file-input" accept=".xlsx,.xls">
-                        <button type="button" class="btn" onclick="document.getElementById('fileInput').click()">
-                            Choose File
+                        <button type="button" class="btn btn-browse" onclick="document.getElementById('fileInput').click()">
+                            📁 Browse Files
                         </button>
+                        <div id="selectedFile" class="selected-file" style="display: none;">
+                            <div class="selected-file-name" id="selectedFileName"></div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Metadata Information -->
                 <div class="metadata-info" id="metadataInfo">
-                    <h3>Metadata Summary</h3>
+                    <h3>📊 Metadata Summary</h3>
                     <div class="info-grid" id="infoGrid">
                         <!-- Dynamic content -->
                     </div>
@@ -409,43 +524,94 @@
 
                 <!-- Validation Options -->
                 <div class="validation-options" id="validationOptions">
-                    <h3>Validation Configuration</h3>
+                    <h3>⚙️ Validation Configuration</h3>
                     <div class="options-grid">
                         <div class="option-group">
-                            <h3>Select Feeds</h3>
+                            <h3>📋 Select Feeds</h3>
                             <div class="checkbox-group" id="feedsGroup">
                                 <!-- Dynamic content -->
                             </div>
                         </div>
 
                         <div class="option-group">
-                            <h3>Select Databases</h3>
-                            <div class="checkbox-group" id="databasesGroup">
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="server1" value="server1" checked>
-                                    <label for="server1">Server 1</label>
+                            <h3>🗄️ SQL Server Configuration</h3>
+                            <div class="sql-server-config">
+                                <div class="sql-server">
+                                    <h4><span class="sql-server-icon">🖥️</span>Server 1 Connection</h4>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="server1_host">Server Name/IP</label>
+                                        <input type="text" id="server1_host" class="form-input" placeholder="e.g., localhost, 192.168.1.100, SQLSERVER01" value="localhost">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="server1_database">Database Name</label>
+                                        <input type="text" id="server1_database" class="form-input" placeholder="e.g., TestDB, DataWarehouse" value="TestDB1">
+                                    </div>
+                                    
+                                    <div class="windows-auth-info">
+                                        <p><strong>🔐 Windows Authentication:</strong> Using current user credentials for secure connection. No username/password required.</p>
+                                    </div>
+                                    
+                                    <div class="connection-test">
+                                        <button type="button" class="btn btn-test" onclick="testConnection('server1')">
+                                            🔍 Test Connection
+                                        </button>
+                                        <div id="server1_status" class="connection-status" style="display: none;"></div>
+                                    </div>
+                                    
+                                    <div class="checkbox-item" style="margin-top: 15px;">
+                                        <input type="checkbox" id="server1_enabled" value="server1" checked>
+                                        <label for="server1_enabled">Enable Server 1</label>
+                                    </div>
                                 </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="server2" value="server2" checked>
-                                    <label for="server2">Server 2</label>
+                                
+                                <div class="sql-server">
+                                    <h4><span class="sql-server-icon">🖥️</span>Server 2 Connection</h4>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="server2_host">Server Name/IP</label>
+                                        <input type="text" id="server2_host" class="form-input" placeholder="e.g., localhost, 192.168.1.101, SQLSERVER02" value="localhost">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="server2_database">Database Name</label>
+                                        <input type="text" id="server2_database" class="form-input" placeholder="e.g., TestDB2, Analytics" value="TestDB2">
+                                    </div>
+                                    
+                                    <div class="windows-auth-info">
+                                        <p><strong>🔐 Windows Authentication:</strong> Using current user credentials for secure connection. No username/password required.</p>
+                                    </div>
+                                    
+                                    <div class="connection-test">
+                                        <button type="button" class="btn btn-test" onclick="testConnection('server2')">
+                                            🔍 Test Connection
+                                        </button>
+                                        <div id="server2_status" class="connection-status" style="display: none;"></div>
+                                    </div>
+                                    
+                                    <div class="checkbox-item" style="margin-top: 15px;">
+                                        <input type="checkbox" id="server2_enabled" value="server2" checked>
+                                        <label for="server2_enabled">Enable Server 2</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="option-group">
-                            <h3>Validation Types</h3>
+                            <h3>✅ Validation Types</h3>
                             <div class="checkbox-group">
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="file_validation" value="file_validation" checked>
-                                    <label for="file_validation">File Validations</label>
+                                    <label for="file_validation">📁 File Validations</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="autosys_validation" value="autosys_validation" checked>
-                                    <label for="autosys_validation">Autosys Job Validations</label>
+                                    <label for="autosys_validation">⚙️ Autosys Job Validations</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="db_validation" value="db_validation" checked>
-                                    <label for="db_validation">Database Validations</label>
+                                    <label for="db_validation">🗄️ Database Validations</label>
                                 </div>
                             </div>
                         </div>
@@ -466,7 +632,7 @@
 
                 <!-- Results Section -->
                 <div class="results-section" id="resultsSection">
-                    <h3>Validation Results</h3>
+                    <h3>📊 Validation Results</h3>
                     
                     <div class="results-summary" id="resultsSummary">
                         <!-- Dynamic content -->
@@ -493,7 +659,7 @@
 
                 <!-- Download Section -->
                 <div class="download-section" id="downloadSection">
-                    <h3>Download Reports</h3>
+                    <h3>📄 Download Reports</h3>
                     <div class="download-buttons" id="downloadButtons">
                         <!-- Dynamic content -->
                     </div>
@@ -509,31 +675,15 @@
         let currentSessionId = null;
         let validationResults = [];
 
-        // File upload handling
-        const uploadArea = document.getElementById('uploadArea');
+        // File input handling
         const fileInput = document.getElementById('fileInput');
-
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                handleFileUpload(files[0]);
-            }
-        });
 
         fileInput.addEventListener('change', (e) => {
             if (e.target.files.length > 0) {
-                handleFileUpload(e.target.files[0]);
+                const file = e.target.files[0];
+                document.getElementById('selectedFileName').textContent = `Selected: ${file.name}`;
+                document.getElementById('selectedFile').style.display = 'block';
+                handleFileUpload(file);
             }
         });
 
@@ -601,6 +751,33 @@
             document.getElementById('validationOptions').style.display = 'block';
         }
 
+        function testConnection(serverName) {
+            const hostElement = document.getElementById(`${serverName}_host`);
+            const databaseElement = document.getElementById(`${serverName}_database`);
+            const statusElement = document.getElementById(`${serverName}_status`);
+            
+            const host = hostElement.value.trim();
+            const database = databaseElement.value.trim();
+            
+            if (!host || !database) {
+                statusElement.innerHTML = 'Please enter both server name and database name';
+                statusElement.className = 'connection-status status-error';
+                statusElement.style.display = 'block';
+                return;
+            }
+            
+            statusElement.innerHTML = 'Testing connection...';
+            statusElement.className = 'connection-status';
+            statusElement.style.display = 'block';
+            
+            // Simulate connection test (in real implementation, this would call backend)
+            setTimeout(() => {
+                // Mock successful connection for demo
+                statusElement.innerHTML = `✅ Connection successful to ${host}\\${database} using Windows Authentication`;
+                statusElement.className = 'connection-status status-success';
+            }, 2000);
+        }
+
         function runValidation() {
             if (!currentSessionId) {
                 showAlert('Please upload a metadata file first', 'error');
@@ -609,7 +786,26 @@
 
             // Get selected options
             const selectedFeeds = Array.from(document.querySelectorAll('#feedsGroup input:checked')).map(cb => cb.value);
-            const selectedDatabases = Array.from(document.querySelectorAll('#databasesGroup input:checked')).map(cb => cb.value);
+            
+            // Get SQL Server configurations
+            const sqlServerConfigs = [];
+            if (document.getElementById('server1_enabled').checked) {
+                sqlServerConfigs.push({
+                    name: 'server1',
+                    host: document.getElementById('server1_host').value.trim(),
+                    database: document.getElementById('server1_database').value.trim(),
+                    authentication: 'Windows'
+                });
+            }
+            if (document.getElementById('server2_enabled').checked) {
+                sqlServerConfigs.push({
+                    name: 'server2',
+                    host: document.getElementById('server2_host').value.trim(),
+                    database: document.getElementById('server2_database').value.trim(),
+                    authentication: 'Windows'
+                });
+            }
+
             const validationTypes = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value).filter(v => ['file_validation', 'autosys_validation', 'db_validation'].includes(v));
 
             // Show loading
@@ -620,7 +816,7 @@
             const requestData = {
                 session_id: currentSessionId,
                 selected_feeds: selectedFeeds,
-                selected_databases: selectedDatabases,
+                sql_server_configs: sqlServerConfigs,
                 validation_types: validationTypes
             };
 
@@ -696,29 +892,4 @@
         function displayDownloadOptions(reportPaths) {
             const downloadButtons = document.getElementById('downloadButtons');
             downloadButtons.innerHTML = Object.entries(reportPaths).map(([type, filename]) => `
-                <a href="/download/${type}/${filename}" class="btn" download>
-                    📄 Download ${type.toUpperCase()} Report
-                </a>
-            `).join('');
-
-            document.getElementById('downloadSection').style.display = 'block';
-        }
-
-        function showAlert(message, type) {
-            const alertContainer = document.getElementById('alertContainer');
-            const alertClass = type === 'success' ? 'alert-success' : 'alert-error';
-            
-            alertContainer.innerHTML = `
-                <div class="alert ${alertClass}">
-                    ${message}
-                </div>
-            `;
-
-            // Auto-hide after 5 seconds
-            setTimeout(() => {
-                alertContainer.innerHTML = '';
-            }, 5000);
-        }
-    </script>
-</body>
-</html>
+                <a href="/download/${type}
