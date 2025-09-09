@@ -1,0 +1,218 @@
+{
+  "report_generated_at": "2025-09-09 11:42:26.156675",
+  "total_tests": 15,
+  "passed_tests": 12,
+  "failed_tests": 3,
+  "error_tests": 0,
+  "success_rate": 80.0,
+  "validation_types": {
+    "Unknown": {
+      "total": 9,
+      "passed": 6,
+      "failed": 3,
+      "errors": 0
+    },
+    "data_type": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "errors": 0
+    },
+    "nullable_constraint": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0
+    }
+  },
+  "feed_results": {
+    "Property_Inputs.YYYYMMDD": {
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "errors": 0
+    },
+    "Insurance_Inetermediate.YYYYMMDD": {
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "errors": 0
+    },
+    "Property_Inetermediate.YYYYMMDD": {
+      "total": 6,
+      "passed": 5,
+      "failed": 1,
+      "errors": 0
+    },
+    "Unknown": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "errors": 0
+    }
+  },
+  "detailed_results": [
+    {
+      "feed_name": "Property_Inputs.YYYYMMDD",
+      "feed_directory": "/data/feeds/Property_Inputs.YYYYMMDD",
+      "directory_exists": false,
+      "files_found": [],
+      "file_count": 0,
+      "latest_file": null,
+      "latest_file_timestamp": null,
+      "validation_status": "FAIL",
+      "error_message": "Feed directory does not exist: /data/feeds/Property_Inputs.YYYYMMDD",
+      "validation_category": "File Validation"
+    },
+    {
+      "feed_name": "Insurance_Inetermediate.YYYYMMDD",
+      "feed_directory": "/data/feeds/Insurance_Inetermediate.YYYYMMDD",
+      "directory_exists": false,
+      "files_found": [],
+      "file_count": 0,
+      "latest_file": null,
+      "latest_file_timestamp": null,
+      "validation_status": "FAIL",
+      "error_message": "Feed directory does not exist: /data/feeds/Insurance_Inetermediate.YYYYMMDD",
+      "validation_category": "File Validation"
+    },
+    {
+      "feed_name": "Property_Inetermediate.YYYYMMDD",
+      "feed_directory": "/data/feeds/Property_Inetermediate.YYYYMMDD",
+      "directory_exists": false,
+      "files_found": [],
+      "file_count": 0,
+      "latest_file": null,
+      "latest_file_timestamp": null,
+      "validation_status": "FAIL",
+      "error_message": "Feed directory does not exist: /data/feeds/Property_Inetermediate.YYYYMMDD",
+      "validation_category": "File Validation"
+    },
+    {
+      "job_name": "FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD",
+      "environment": "DEV",
+      "job_exists": true,
+      "job_definition": "insert_job: FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD\njob_type: c\ncommand: /scripts/default.sh\nmachine: server1",
+      "validation_status": "PASS",
+      "error_message": null,
+      "validation_category": "Autosys Validation",
+      "test_type": "Job Availability"
+    },
+    {
+      "job_name": "FEED_LOAD_PROPERTY_INPUTS.YYYYMMDD",
+      "environment": "DEV",
+      "current_status": "SU",
+      "expected_status": "SU",
+      "last_run_time": "2024-01-15 10:30:00",
+      "next_run_time": "2024-01-16 10:30:00",
+      "validation_status": "PASS",
+      "error_message": null,
+      "validation_category": "Autosys Validation",
+      "test_type": "Job Status"
+    },
+    {
+      "job_name": "FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD",
+      "environment": "DEV",
+      "job_exists": true,
+      "job_definition": "insert_job: FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD\njob_type: c\ncommand: /scripts/default.sh\nmachine: server1",
+      "validation_status": "PASS",
+      "error_message": null,
+      "validation_category": "Autosys Validation",
+      "test_type": "Job Availability"
+    },
+    {
+      "job_name": "FEED_LOAD_INSURANCE_INETERMEDIATE.YYYYMMDD",
+      "environment": "DEV",
+      "current_status": "SU",
+      "expected_status": "SU",
+      "last_run_time": "2024-01-15 10:30:00",
+      "next_run_time": "2024-01-16 10:30:00",
+      "validation_status": "PASS",
+      "error_message": null,
+      "validation_category": "Autosys Validation",
+      "test_type": "Job Status"
+    },
+    {
+      "job_name": "FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD",
+      "environment": "DEV",
+      "job_exists": true,
+      "job_definition": "insert_job: FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD\njob_type: c\ncommand: /scripts/default.sh\nmachine: server1",
+      "validation_status": "PASS",
+      "error_message": null,
+      "validation_category": "Autosys Validation",
+      "test_type": "Job Availability"
+    },
+    {
+      "job_name": "FEED_LOAD_PROPERTY_INETERMEDIATE.YYYYMMDD",
+      "environment": "DEV",
+      "current_status": "SU",
+      "expected_status": "SU",
+      "last_run_time": "2024-01-15 10:30:00",
+      "next_run_time": "2024-01-16 10:30:00",
+      "validation_status": "PASS",
+      "error_message": null,
+      "validation_category": "Autosys Validation",
+      "test_type": "Job Status"
+    },
+    {
+      "validation_type": "data_type",
+      "validation_category": "Database Validation",
+      "test_type": "Data Type",
+      "feed_name": "Property_Inetermediate.YYYYMMDD",
+      "column_name": "F1_ID",
+      "expected_type": "varchar(100)",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "nullable_constraint",
+      "validation_category": "Database Validation",
+      "test_type": "Mandatory Field",
+      "feed_name": "Property_Inetermediate.YYYYMMDD",
+      "column_name": "F1_ID",
+      "null_count": 0,
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "data_type",
+      "validation_category": "Database Validation",
+      "test_type": "Data Type",
+      "feed_name": "Property_Inetermediate.YYYYMMDD",
+      "column_name": "F2",
+      "expected_type": "varchar(100)",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "data_type",
+      "validation_category": "Database Validation",
+      "test_type": "Data Type",
+      "feed_name": "Property_Inetermediate.YYYYMMDD",
+      "column_name": "F3",
+      "expected_type": "varchar(100)",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "data_type",
+      "validation_category": "Database Validation",
+      "test_type": "Data Type",
+      "feed_name": "Property_Inetermediate.YYYYMMDD",
+      "column_name": "F4_Country",
+      "expected_type": "varchar(100)",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "data_type",
+      "validation_category": "Database Validation",
+      "test_type": "Data Type",
+      "feed_name": "Property_Inputs.YYYYMMDD",
+      "column_name": "ColA",
+      "expected_type": "nan",
+      "validation_status": "PASS",
+      "error_message": null
+    }
+  ]
+}
