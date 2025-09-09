@@ -1,0 +1,139 @@
+{
+  "report_generated_at": "2025-09-09 11:02:01.888777",
+  "total_tests": 11,
+  "passed_tests": 10,
+  "failed_tests": 1,
+  "error_tests": 0,
+  "success_rate": 90.91,
+  "validation_types": {
+    "file_availability": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0
+    },
+    "autosys_job": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0
+    },
+    "data_type": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0
+    },
+    "nullable_constraint": {
+      "total": 4,
+      "passed": 3,
+      "failed": 1,
+      "errors": 0
+    },
+    "unique_constraint": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0
+    }
+  },
+  "feed_results": {
+    "CUSTOMER_FEED": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "errors": 0
+    },
+    "TRANSACTION_FEED": {
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "errors": 0
+    }
+  },
+  "detailed_results": [
+    {
+      "validation_type": "file_availability",
+      "feed_name": "CUSTOMER_FEED",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "autosys_job",
+      "feed_name": "CUSTOMER_FEED",
+      "job_name": "FEED_LOAD_CUSTOMER_FEED",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "data_type",
+      "feed_name": "CUSTOMER_FEED",
+      "column_name": "CUSTOMER_ID",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "nullable_constraint",
+      "feed_name": "TRANSACTION_FEED",
+      "column_name": "AMOUNT",
+      "validation_status": "FAIL",
+      "error_message": "Found 5 null values in mandatory field"
+    },
+    {
+      "validation_type": "data_type",
+      "feed_name": "CUSTOMER_FEED",
+      "column_name": "CUSTOMER_ID",
+      "expected_type": "INTEGER",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "nullable_constraint",
+      "feed_name": "CUSTOMER_FEED",
+      "column_name": "CUSTOMER_ID",
+      "null_count": 0,
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "unique_constraint",
+      "feed_name": "CUSTOMER_FEED",
+      "column_name": "CUSTOMER_ID",
+      "duplicate_count": 0,
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "data_type",
+      "feed_name": "CUSTOMER_FEED",
+      "column_name": "CUSTOMER_NAME",
+      "expected_type": "VARCHAR",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "nullable_constraint",
+      "feed_name": "CUSTOMER_FEED",
+      "column_name": "CUSTOMER_NAME",
+      "null_count": 0,
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "data_type",
+      "feed_name": "CUSTOMER_FEED",
+      "column_name": "STATUS",
+      "expected_type": "VARCHAR",
+      "validation_status": "PASS",
+      "error_message": null
+    },
+    {
+      "validation_type": "nullable_constraint",
+      "feed_name": "CUSTOMER_FEED",
+      "column_name": "STATUS",
+      "null_count": 0,
+      "validation_status": "PASS",
+      "error_message": null
+    }
+  ]
+}
