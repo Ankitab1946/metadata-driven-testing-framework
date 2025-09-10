@@ -489,3 +489,17 @@ For more information, see README.md
 2025-09-10 10:16:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
 2025-09-10 10:17:36 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
 2025-09-10 10:17:36 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 11:12:37 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 11:12:37 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 11:38:02 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 11:38:02 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 11:39:51 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 11:39:51 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 11:45:38 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 11:45:38 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 11:47:05 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 11:47:05 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 11:49:04 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 11:49:04 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 11:50:16 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 11:50:17 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
