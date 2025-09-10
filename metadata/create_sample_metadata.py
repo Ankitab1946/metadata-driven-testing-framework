@@ -14,6 +14,7 @@ def create_sample_metadata():
     # Sample data for Feed_to_staging sheet
     feed_to_staging_data = [
         {
+            'SkipRow': '',
             'Modules': 'CUSTOMER_MODULE',
             'Feed': 'CUSTOMER_FEED',
             'FieldName': 'CUSTOMER_ID',
