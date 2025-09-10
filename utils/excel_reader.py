@@ -11,7 +11,8 @@ from utils.logger import framework_logger
 class FeedMetadata:
     """Feed to staging metadata structure"""
     modules: str
-    feed: str
+    feed: str  # This will store the raw feed string (possibly multiple paths)
+    feed_list: list  # New field to store parsed list of feed file paths
     field_name: str
     db_name: str
     db_table: str
@@ -24,6 +25,7 @@ class FeedMetadata:
     range_top: Optional[str]
     mandatory: str
     unique: str
+
 
 @dataclass
 class StagingMetadata:
@@ -128,13 +130,20 @@ class MetadataReader:
             # Clean column names
             df.columns = df.columns.str.strip()
             
+            import re
+            
             for _, row in df.iterrows():
                 if pd.isna(row.get('Modules')) or pd.isna(row.get('Feed')):
                     continue
                 
+                feed_raw = str(row.get('Feed', ''))
+                # Split feed string by comma, pipe, semicolon
+                feed_list = [f.strip() for f in re.split(r'[,\|;]+', feed_raw) if f.strip()]
+                
                 feed_meta = FeedMetadata(
                     modules=str(row.get('Modules', '')),
-                    feed=str(row.get('Feed', '')),
+                    feed=feed_raw,
+                    feed_list=feed_list,
                     field_name=str(row.get('FieldName', '')),
                     db_name=str(row.get('DBName', '')),
                     db_table=str(row.get('DB Table', '')),
