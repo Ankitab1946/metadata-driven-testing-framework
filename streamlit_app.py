@@ -50,14 +50,11 @@ if uploaded_file:
     st.write(f"Enumeration Records: {len(metadata['enumeration_metadata'])}")
 
     # Select feeds
-    raw_feeds = metadata_reader.get_unique_feeds()
-    # Split feeds by comma, pipe, or semicolon and flatten
-    import re
-    split_feeds = []
-    for feed in raw_feeds:
-        split_feeds.extend(re.split(r'[,\|;]+', feed))
+    raw_feeds = []
+    for meta in metadata_reader.feed_metadata:
+        raw_feeds.extend(meta.feed_list)
     # Remove duplicates and empty strings
-    unique_feeds = sorted(set(f.strip() for f in split_feeds if f.strip()))
+    unique_feeds = sorted(set(f.strip() for f in raw_feeds if f.strip()))
     selected_feeds = st.multiselect("Select Feeds to Validate", unique_feeds, default=unique_feeds)
 
     # Database configuration
