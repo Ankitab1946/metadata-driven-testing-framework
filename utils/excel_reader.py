@@ -136,6 +136,10 @@ class MetadataReader:
                 if pd.isna(row.get('Modules')) or pd.isna(row.get('Feed')):
                     continue
                 
+                # Skip row if SkipRow column is '#'
+                if str(row.get('SkipRow', '')).strip() == '#':
+                    continue
+                
                 feed_raw = str(row.get('Feed', ''))
                 # Split feed string by comma, pipe, semicolon
                 feed_list = [f.strip() for f in re.split(r'[,\|;]+', feed_raw) if f.strip()]
@@ -177,6 +181,10 @@ class MetadataReader:
             
             for _, row in df.iterrows():
                 if pd.isna(row.get('Modules')):
+                    continue
+                
+                # Skip row if SkipRow column is '#'
+                if str(row.get('SkipRow', '')).strip() == '#':
                     continue
                 
                 staging_meta = StagingMetadata(
