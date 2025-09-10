@@ -45,6 +45,13 @@ class DatabaseValidator:
             for table_key, table_metadata in table_groups.items():
                 db_name, table_name = table_key.split('.', 1)
                 
+                # Get where clause if available
+                where_clause = None
+                for meta in table_metadata:
+                    if hasattr(meta, 'where_clause') and meta.where_clause:
+                        where_clause = meta.where_clause
+                        break
+                
                 result = {
                     'validation_type': 'data_type',
                     'db_name': db_name,
