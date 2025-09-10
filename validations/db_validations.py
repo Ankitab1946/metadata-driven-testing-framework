@@ -31,7 +31,10 @@ class DatabaseValidator:
             
             # Filter metadata by selected feeds if specified
             if selected_feeds:
-                metadata = [meta for meta in metadata if meta.feed in selected_feeds]
+                metadata = [meta for meta in metadata if meta.feed in selected_feeds and (not hasattr(meta, 'skiprow') or str(meta.skiprow).strip() != '#')]
+            else:
+                # Exclude skipped rows
+                metadata = [meta for meta in metadata if not (hasattr(meta, 'skiprow') and str(meta.skiprow).strip() == '#')]
             
             # Group metadata by database and table
             table_groups = {}
