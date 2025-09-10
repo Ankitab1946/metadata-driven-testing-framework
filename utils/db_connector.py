@@ -111,6 +111,121 @@ class DatabaseConnector:
         except Exception as e:
             framework_logger.error(f"Error executing query on {db_name}: {str(e)}")
             raise
+
+    def get_row_count(self, db_name: str, table_name: str, where_clause: Optional[str] = None) -> int:
+        """Get row count for a table with optional where clause"""
+        try:
+            query = f"SELECT COUNT(*) as row_count FROM {table_name}"
+            if where_clause:
+                query += f" WHERE {where_clause}"
+            
+            result = self.execute_query(db_name, query)
+            count = result.iloc[0]['row_count']
+            
+            framework_logger.info(f"Row count for {table_name} on {db_name} with where clause '{where_clause}': {count}")
+            return count
+            
+        except Exception as e:
+            framework_logger.error(f"Error getting row count for {table_name} on {db_name}: {str(e)}")
+            raise
+
+    def check_nullable_constraints(self, db_name: str, table_name: str, column_name: str, where_clause: Optional[str] = None) -> Tuple[bool, int]:
+        """Check nullable constraints for a column with optional where clause"""
+        try:
+            # Check if column allows nulls in schema
+            schema = self.get_table_schema(db_name, table_name)
+            column_nullable = None
+            
+            for col in schema['columns']:
+                if col['name'] == column_name:
+                    column_nullable = col['nullable']
+                    break
+            
+            # Count null values in the column with where clause
+            query = f"SELECT COUNT(*) as null_count FROM {table_name} WHERE {column_name} IS NULL"
+            if where_clause:
+                query += f" AND ({where_clause})"
+            
+            result = self.execute_query(db_name, query)
+            null_count = result.iloc[0]['null_count']
+            
+            framework_logger.info(f"Nullable check for {column_name} in {table_name} on {db_name} with where clause '{where_clause}': nullable={column_nullable}, null_count={null_count}")
+            return column_nullable, null_count
+            
+        except Exception as e:
+            framework_logger.error(f"Error checking nullable constraints for {column_name} in {table_name} on {db_name}: {str(e)}")
+            raise
+
+    def check_unique_constraints(self, db_name: str, table_name: str, column_name: str, where_clause: Optional[str] = None) -> Tuple[int, int]:
+        """Check unique constraints for a column with optional where clause"""
+        try:
+            # Get total count with where clause
+            total_query = f"SELECT COUNT(*) as total_count FROM {table_name}"
+            if where_clause:
+                total_query += f" WHERE {where_clause}"
+            total_result = self.execute_query(db_name, total_query)
+            total_count = total_result.iloc[0]['total_count']
+            
+            # Get distinct count with where clause
+            distinct_query = f"SELECT COUNT(DISTINCT {column_name}) as distinct_count FROM {table_name}"
+            if where_clause:
+                distinct_query += f" WHERE {where_clause}"
+            distinct_result = self.execute_query(db_name, distinct_query)
+            distinct_count = distinct_result.iloc[0]['distinct_count']
+            
+            framework_logger.info(f"Unique check for {column_name} in {table_name} on {db_name} with where clause '{where_clause}': total={total_count}, distinct={distinct_count}")
+            return total_count, distinct_count
+            
+        except Exception as e:
+            framework_logger.error(f"Error checking unique constraints for {column_name} in {table_name} on {db_name}: {str(e)}")
+            raise
+
+    def check_range_constraints(self, db_name: str, table_name: str, column_name: str, 
+                              range_bottom: Optional[str], range_top: Optional[str], where_clause: Optional[str] = None) -> Dict[str, int]:
+        """Check range constraints for a column with optional where clause"""
+        try:
+            results = {}
+            
+            if range_bottom:
+                query = f"SELECT COUNT(*) as below_range FROM {table_name} WHERE {column_name} < {range_bottom}"
+                if where_clause:
+                    query += f" AND ({where_clause})"
+                result = self.execute_query(db_name, query)
+                results['below_range'] = result.iloc[0]['below_range']
+            
+            if range_top:
+                query = f"SELECT COUNT(*) as above_range FROM {table_name} WHERE {column_name} > {range_top}"
+                if where_clause:
+                    query += f" AND ({where_clause})"
+                result = self.execute_query(db_name, query)
+                results['above_range'] = result.iloc[0]['above_range']
+            
+            framework_logger.info(f"Range check for {column_name} in {table_name} on {db_name} with where clause '{where_clause}': {results}")
+            return results
+            
+        except Exception as e:
+            framework_logger.error(f"Error checking range constraints for {column_name} in {table_name} on {db_name}: {str(e)}")
+            raise
+
+    def check_enumeration_constraints(self, db_name: str, table_name: str, column_name: str, 
+                                    allowed_values: List[str], where_clause: Optional[str] = None) -> int:
+        """Check enumeration constraints for a column with optional where clause"""
+        try:
+            # Create IN clause with allowed values
+            values_str = "', '".join(allowed_values)
+            query = f"SELECT COUNT(*) as invalid_count FROM {table_name} WHERE {column_name} NOT IN ('{values_str}')"
+            if where_clause:
+                query += f" AND ({where_clause})"
+            
+            result = self.execute_query(db_name, query)
+            invalid_count = result.iloc[0]['invalid_count']
+            
+            framework_logger.info(f"Enumeration check for {column_name} in {table_name} on {db_name} with where clause '{where_clause}': invalid_count={invalid_count}")
+            return invalid_count
+            
+        except Exception as e:
+            framework_logger.error(f"Error checking enumeration constraints for {column_name} in {table_name} on {db_name}: {str(e)}")
+            raise
     
     def get_table_schema(self, db_name: str, table_name: str) -> Dict[str, Any]:
         """Get table schema information"""
