@@ -52,10 +52,18 @@ if uploaded_file:
     # Select feeds
     raw_feeds = []
     for meta in metadata_reader.feed_metadata:
+        # Skip rows with SkipRow == '#'
+        if hasattr(meta, 'skiprow') and str(meta.skiprow).strip() == '#':
+            continue
         raw_feeds.extend(meta.feed_list)
     # Remove duplicates and empty strings
     unique_feeds = sorted(set(f.strip() for f in raw_feeds if f.strip()))
     selected_feeds = st.multiselect("Select Feeds to Validate", unique_feeds, default=unique_feeds)
+
+    # Filter out skipped rows from metadata for validation
+    filtered_feed_metadata = [meta for meta in metadata_reader.feed_metadata if not (hasattr(meta, 'skiprow') and str(meta.skiprow).strip() == '#')]
+    
+    # Use filtered_feed_metadata for validation logic below
 
     # Database configuration
     st.subheader("SQL Server Configuration (Windows Authentication)")
@@ -131,7 +139,7 @@ if uploaded_file:
 
             # Database validations (mock)
             if 'db_validation' in validation_types:
-                for feed_meta in metadata['feed_metadata'][:5]:
+                for feed_meta in filtered_feed_metadata[:5]:
                     if feed_meta.feed in selected_feeds:
                         result = {
                             'validation_type': 'data_type',
