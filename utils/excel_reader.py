@@ -31,9 +31,11 @@ class StagingMetadata:
     modules: str
     stg_db_name: str
     stg_db_table: str
+    where_clause_stg: Optional[str]
     stg_field_name: str
     trg_db_name: str
     trg_db_table: str
+    where_clause_trg: Optional[str]
     trg_field_name: str
     trg_data_type: str
     nullable: str
