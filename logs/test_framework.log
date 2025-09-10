@@ -483,3 +483,9 @@ For more information, see README.md
 2025-09-10 08:35:12 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
 2025-09-10 09:41:22 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
 2025-09-10 09:41:22 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 09:56:36 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 09:56:36 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 10:16:08 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 10:16:08 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
+2025-09-10 10:17:36 | INFO     | utils.db_connector:_initialize_connections:53 - Database connections initialized successfully
+2025-09-10 10:17:36 | INFO     | __main__:<module>:263 - Starting Metadata-Driven Testing Framework Web Application
